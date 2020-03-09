@@ -684,10 +684,10 @@ add_filter('the_excerpt_rss', 'rss_post_thumbnail');
 add_filter('the_content_feed', 'rss_post_thumbnail');
 
 /** 未来の記事を表示する 2019.08.01 @blueb **/
-function stop_post_status_future_func( $data, $postarr ) {
- if ( $data['post_status'] == 'future' && $postarr['post_status'] == 'publish' ) {
-       $data['post_status'] = 'publish';
-   }
-   return $data;
+function stop_post_status_future_func($data,$postarr) {
+  if ( ( $data['post_type'] == 'schedule' && $data['post_status'] == 'future' ) && $postarr['post_status'] == 'publish' ){
+    $data['post_status'] = 'publish';
+  }
+  return $data;
 };
 add_filter( 'wp_insert_post_data', 'stop_post_status_future_func', 10, 2 );
