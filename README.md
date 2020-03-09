@@ -1,0 +1,2 @@
+# AJFukuoka
+AJFukuokaのサイトです
