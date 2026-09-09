@@ -29,6 +29,7 @@ add_action( 'after_setup_theme', 'habakiri_parent_theme_setup', 99999 );
  * License    : GPLv2 or later
  * License URI: license.txt
  */
+#[AllowDynamicProperties]
 class Habakiri_Base_Functions {
 
 	/**
